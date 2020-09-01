@@ -9,7 +9,7 @@
     {
       "id": 2,
       "topping": "Pepperoni",
-      "size": "Medium",
+      "size": "Small",
       "vegetarian": true
     },
     {
@@ -32,8 +32,8 @@
     },
     {
       "id": 6,
-      "topping": "Spinach",
-      "size": "Small",
+      "topping": "Spinachh",
+      "size": "Large",
       "vegetarian": true
     },
     {

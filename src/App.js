@@ -10,7 +10,7 @@ class App extends Component {
     pizzaTopping:'',
     pizzaSize:'',
     isVeggie: null,
-    id:null
+    id: null
   }
 
   componentDidMount(){
@@ -52,6 +52,15 @@ class App extends Component {
       let vegetarian = this.state.isVeggie
       let id = this.state.id
 
+      let newArray=[...this.state.pizzaList]
+    
+      let pizza_object = newArray.find((pizza)=> pizza.id ===this.state.id)
+      pizza_object.topping = this.state.pizzaTopping
+      pizza_object.size = this.state.pizzaSize
+      pizza_object.vegetarian = this.state.isVeggie
+
+      this.setState({pizzaList:newArray})
+
       let options = {
         method: "PATCH",
         headers: {
@@ -61,14 +70,14 @@ class App extends Component {
       }
 
       fetch(`http://localhost:3000/pizzas/${id}`,options )
-      .then(resp=>resp.json())
-      .then(()=>{
+      // .then(resp=>resp.json())
+      // .then(()=>{
          
-        fetch(`http://localhost:3000/pizzas` )
-        .then(resp=>resp.json())
-        .then(pizzaData => this.setState({pizzaList: pizzaData}))
+      //   fetch(`http://localhost:3000/pizzas` )
+      //   .then(resp=>resp.json())
+      //   .then(pizzaData => this.setState({pizzaList: pizzaData}))
 
-      }) 
+      // }) 
     }
 
     render() {
