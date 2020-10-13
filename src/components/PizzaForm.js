@@ -2,8 +2,6 @@ import React from "react"
 
 const PizzaForm = (props) => {
 
-  console.log(props.isVeggie)
-
   return(
       <div className="form-row">
         <div className="col-5">
